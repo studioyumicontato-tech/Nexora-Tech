@@ -1,0 +1,434 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Nexora Tech - Soluções digitais, tecnologia e inovação.">
+<title>Nexora Tech | Tecnologia e Inovação</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --dark: #17132b;
+    --purple: #8061bd;
+    --light: #f7f5fb;
+    --text: #302b3d;
+    --muted: #777184;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: white;
+    color: var(--text);
+    line-height: 1.6;
+}
+
+header {
+    background: white;
+    padding: 20px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 2px 15px #17132b0d;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--dark);
+    letter-spacing: 1px;
+}
+
+.logo span {
+    color: var(--purple);
+}
+
+nav {
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+nav a:hover {
+    color: var(--purple);
+}
+
+.menu {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 27px;
+    color: var(--dark);
+}
+
+.hero {
+    min-height: 590px;
+    padding: 100px 8%;
+    display: flex;
+    align-items: center;
+    background:
+    radial-gradient(circle at 80% 30%, #8061bd55, transparent 35%),
+    linear-gradient(120deg, #17132b, #30234e);
+    color: white;
+}
+
+.hero-content {
+    max-width: 750px;
+}
+
+.tag {
+    color: #c9b5ef;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.hero h1 {
+    font-size: clamp(38px, 6vw, 65px);
+    line-height: 1.1;
+    margin: 22px 0;
+}
+
+.hero h1 span {
+    color: #bda2ef;
+}
+
+.hero p {
+    color: #ddd7e9;
+    max-width: 550px;
+    margin-bottom: 30px;
+    font-size: 17px;
+}
+
+.button {
+    display: inline-block;
+    padding: 14px 25px;
+    background: #a78bdc;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: .3s;
+}
+
+.button:hover {
+    background: #8b6bb1;
+    transform: translateY(-3px);
+}
+
+section {
+    padding: 90px 8%;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.section-title small {
+    color: var(--purple);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+.section-title h2 {
+    font-size: 34px;
+    color: var(--dark);
+    margin-top: 10px;
+}
+
+.about {
+    text-align: center;
+    max-width: 850px;
+    margin: auto;
+}
+
+.about p {
+    color: var(--muted);
+    font-size: 17px;
+}
+
+.services {
+    background: var(--light);
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.card {
+    background: white;
+    padding: 32px;
+    border-radius: 14px;
+    border: 1px solid #eee9f5;
+    transition: .3s;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px #30234e12;
+}
+
+.card .symbol {
+    font-size: 30px;
+    margin-bottom: 18px;
+}
+
+.card h3 {
+    color: var(--dark);
+    margin-bottom: 12px;
+}
+
+.card p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.differentials {
+    background: var(--dark);
+    color: white;
+    text-align: center;
+}
+
+.differentials h2 {
+    font-size: 34px;
+    margin-bottom: 15px;
+}
+
+.differentials p {
+    color: #d4cce2;
+    max-width: 650px;
+    margin: auto;
+}
+
+.contact {
+    text-align: center;
+}
+
+.contact p {
+    color: var(--muted);
+    margin: 15px auto 25px;
+}
+
+footer {
+    background: #110e20;
+    color: #c8bfd8;
+    text-align: center;
+    padding: 28px 15px;
+    font-size: 13px;
+}
+
+footer strong {
+    color: white;
+}
+
+.notice {
+    font-size: 11px;
+    color: #a69bb8;
+    margin-top: 8px;
+}
+
+@media (max-width: 750px) {
+    header {
+        padding: 17px 6%;
+    }
+
+    .menu {
+        display: block;
+    }
+
+    nav {
+        display: none;
+        position: absolute;
+        top: 65px;
+        left: 0;
+        width: 100%;
+        background: white;
+        padding: 25px;
+        flex-direction: column;
+        box-shadow: 0 8px 15px #17132b12;
+    }
+
+    nav.active {
+        display: flex;
+    }
+
+    .hero {
+        padding: 85px 7%;
+        min-height: 520px;
+    }
+
+    section {
+        padding: 70px 7%;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .section-title h2 {
+        font-size: 28px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">NEXORA<span>.</span></div>
+
+    <button class="menu" id="menu" aria-label="Abrir menu">☰</button>
+
+    <nav id="nav">
+        <a href="#inicio">Início</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#contato">Contato</a>
+    </nav>
+</header>
+
+<main>
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+            <span class="tag">Tecnologia • Estratégia • Inovação</span>
+
+            <h1>Transformamos ideias em <span>soluções digitais.</span></h1>
+
+            <p>
+                Conectamos tecnologia, criatividade e estratégia
+                para desenvolver experiências digitais que ajudam
+                negócios a evoluir.
+            </p>
+
+            <a href="#servicos" class="button">Conheça nossas soluções</a>
+        </div>
+    </section>
+
+    <section id="sobre">
+        <div class="section-title">
+            <small>Quem somos</small>
+            <h2>Sobre a Nexora</h2>
+        </div>
+
+        <div class="about">
+            <p>
+                A Nexora Tech é uma empresa fictícia criada para
+                demonstrar como a tecnologia pode aproximar ideias
+                de resultados. Nosso conceito é desenvolver soluções
+                digitais modernas, acessíveis e pensadas para as
+                necessidades de cada negócio.
+            </p>
+        </div>
+    </section>
+
+    <section class="services" id="servicos">
+        <div class="section-title">
+            <small>O que fazemos</small>
+            <h2>Nossas soluções</h2>
+        </div>
+
+        <div class="cards">
+            <article class="card">
+                <div class="symbol">✦</div>
+                <h3>Desenvolvimento Web</h3>
+                <p>
+                    Criação de sites modernos, responsivos e
+                    personalizados para diferentes objetivos.
+                </p>
+            </article>
+
+            <article class="card">
+                <div class="symbol">⌘</div>
+                <h3>Sistemas Digitais</h3>
+                <p>
+                    Conceitos de sistemas digitais para organizar
+                    processos e facilitar atividades empresariais.
+                </p>
+            </article>
+
+            <article class="card">
+                <div class="symbol">◈</div>
+                <h3>Consultoria Tecnológica</h3>
+                <p>
+                    Planejamento de soluções e estratégias para
+                    acompanhar a transformação digital.
+                </p>
+            </article>
+        </div>
+    </section>
+
+    <section class="differentials">
+        <h2>O futuro começa com uma ideia.</h2>
+        <p>
+            Acreditamos que a inovação acontece quando criatividade
+            e tecnologia trabalham juntas para construir novas
+            possibilidades.
+        </p>
+    </section>
+
+    <section class="contact" id="contato">
+        <div class="section-title">
+            <small>Vamos conversar</small>
+            <h2>Entre em contato</h2>
+        </div>
+
+        <p>
+            Este espaço representa a área de contato da empresa
+            demonstrativa.
+        </p>
+
+        <a href="mailto:contato@nexora.example" class="button">
+            Enviar mensagem
+        </a>
+    </section>
+</main>
+
+<footer>
+    <strong>NEXORA TECH</strong>
+    <p>© <span id="year"></span> Nexora Tech. Projeto demonstrativo.</p>
+    <p class="notice">
+        Projeto fictício desenvolvido para o portfólio do Studio Yumi.
+    </p>
+</footer>
+
+<script>
+const menu = document.getElementById("menu");
+const nav = document.getElementById("nav");
+
+menu.addEventListener("click", () => {
+    nav.classList.toggle("active");
+});
+
+nav.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+        nav.classList.remove("active");
+    });
+});
+
+document.getElementById("year").textContent =
+    new Date().getFullYear();
+</script>
+
+</body>
+</html>
